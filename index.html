@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Tech by PAD | Smartphones & Accessoires Premium</title>
+    <meta name="description" content="Pure Tech by PAD - La meilleure sélection de smartphones, tablettes et accessoires premium à Dakar. Authenticité, qualité et livraison rapide.">
+    <meta name="keywords" content="Pure Tech, PAD, smartphones Dakar, iPhone Sénégal, Samsung Sénégal, Google Pixel, accessoires premium, électronique Dakar">
+    <meta name="author" content="Pape Abdou Diop">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://puretechbypad.com/">
+    <meta property="og:title" content="Pure Tech by PAD | Smartphones & Accessoires Premium">
+    <meta property="og:description" content="La sélection premium de smartphones et accessoires à Dakar. Livraison rapide et garantie.">
+    <meta property="og:image" content="images/banniere.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://puretechbypad.com/">
+    <meta property="twitter:title" content="Pure Tech by PAD | Smartphones & Accessoires Premium">
+    <meta property="twitter:description" content="La sélection premium de smartphones et accessoires à Dakar.">
+    <meta property="twitter:image" content="images/banniere.jpg">
+
+    <link rel="stylesheet" href="CSS/puretechstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="loading">
+
+    <nav class="navbar">
+        <div class="logo">PURE TECH <span>by PAD</span></div>
+
+         <ul class="nav-links" id="nav-links">
+             <li><a href="#accueil">Accueil</a></li>
+             <li><a href="#products">Boutique</a></li>
+            <li><a href="#contact">Contact</a></li>
+             <li><a href="#services">Nos Services</a></li>
+         </ul>
+
+        <div class="nav-icons">
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="hamburger" id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="accueil">
+        <h1>L'innovation signée PAD</h1>
+        <p>Sélection premium par Pape Abdou Diop</p>
+        <a href="#products" class="btn">Voir la collection</a>
+    </header>
+
+    <main class="container" id="products">
+        <h2 class="section-title">Nos Meilleurs Choix</h2>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un produit..." onkeyup="searchProducts()">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">Tous</button>
+            <button class="filter-btn" onclick="filterProducts('smartphone', this)">Smartphones</button>
+            <button class="filter-btn" onclick="filterProducts('audio', this)">Audio</button>
+            <button class="filter-btn" onclick="filterProducts('accessoire', this)">Accessoires</button>
+            <button class="filter-btn" onclick="filterProducts('tablette',this)">Tablettes</button>
+            <button class="filter-btn" onclick="filterProducts('googlepixel',this)">Google Pixel</button>
+            <button class="filter-btn" onclick="filterProducts('ordinateur',this)">Ordinateur</button>
+        </div>
+
+        <div class="sort-container">
+            <label for="sort-select"><i class="fas fa-sort-amount-down"></i> Trier par :</label>
+            <select id="sort-select" onchange="sortProducts(this.value)">
+                <option value="default">Par défaut</option>
+                <option value="low-high">Prix : Croissant</option>
+                <option value="high-low">Prix : Décroissant</option>
+                <option value="name">Nom : A-Z</option>
+            </select>
+        </div>
+
+
+        <div class="product-grid" id="product-list"></div>
+    </main>
+
+  <a href="#accueil" id="scrollTop" title="Remonter en haut">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <i class="fas fa-times" onclick="toggleCart()" style="cursor:pointer"></i>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total">Total : <span id="cart-total">0</span> FCFA</div>
+            <button class="btn-checkout" onclick="checkout()">Commander via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Modal Détails Produit -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Produit">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-name">Nom du Produit</h2>
+                    <p id="modal-category" class="category-tag"></p>
+                    <p id="modal-desc" class="description"></p>
+                    <div class="modal-price" id="modal-price">0 FCFA</div>
+                    <button class="btn-add-modal" id="modal-add-btn">Ajouter au Panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="services" class="container">
+    <h2 class="section-title">Nos Services Premium</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Livraison Express</h3>
+            <p>Recevez vos gadgets et smartphones où que vous soyez. <br> Livraison ultra-rapide en moins de 24h sur Dakar et en 48h dans les régions du Sénégal. <br> La technologie n'attend pas.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-tools"></i>
+            <h3>SAV & Réparation</h3>
+            <p>Un problème technique ? <br> Notre équipe d'experts assure le diagnostic et la réparation de vos appareils avec des pièces d'origine. <br> Chez nous, l'achat n'est que le début de notre engagement.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Reprise (Troc)</h3>
+            <p>Évoluez sans vous ruiner. <br> Ramenez votre ancien téléphone et repartez avec un modèle plus récent. <br> Une évaluation juste et immédiate pour vous offrir le meilleur de l'innovation.</p>
+        </div>
+    </div>
+</section>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="logo" style="color: white;">PURE TECH <span style="color: var(--primary);">by PAD</span></div>
+            <p style="color: #aaa; margin-top: 15px;">Le meilleur de la technologie premium à Dakar. Authenticité et service client garantis.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19cGrBMgeZ/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mister_dou1?igsh=MXRybmkxNWs1djU5eg%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@puretechbypad?_r=1&_t=ZG-9A0iEE4Rt8i"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/qr/UHWRR3IAZ4WEE1?s=p"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#products">Boutique</a></li>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Paiement & Livraison</h3>
+            <p style="color: #aaa;">Nous acceptons :</p>
+            <div class="payment-methods" style="color: white; margin-bottom: 15px;">
+                <span>Wave</span> | <span>Orange Money</span> | <span>Espèces</span>
+            </div>
+            <p class="delivery-info" style="color: #aaa;"><i class="fas fa-motorcycle"></i> Livraison partout au Sénégal</p>
+        </div>
+
+        <div class="footer-col" id="contact">
+            <h3 style="color: var(--primary);">Contactez-nous</h3>
+            <p onclick="appelerPAD()" style="cursor:pointer; color: #aaa; margin-bottom: 10px;">
+                <strong style="color: var(--primary);"><i class="fas fa-phone"></i> Téléphone:</strong> +221 78 123 75 68 ou +221 77 965 50 68
+            </p>
+            <p onclick="envoyerEmail()" style="cursor:pointer; color: #aaa;">
+                <strong style="color: var(--primary);"><i class="fas fa-envelope"></i> Email:</strong> diopa7399@gmail.com
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px;">
+        <p>&copy; 2026 Pure Tech by PAD - Tous droits réservés. Design by Pape Abdou Diop.</p>
+    </div>
+</footer>
+
+    <script src="Js/Products.js"></script>
+    <script src="Js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+// Initialisation
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts(products);
+    updateCart();
+
+    window.onscroll = function() {
+        const btn = document.getElementById("scrollTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+
+    window.addEventListener('scroll', function() {
+        const scrollBtn = document.getElementById("scrollTop");
+        if (window.scrollY > 300) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    });
+});
+
+// Navigation Mobile
+function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('show');
+}
+
+// Affichage Produits
+function displayProducts(data) {
+    const list = document.getElementById('product-list');
+    if (!list) return;
+
+    list.innerHTML = data.map(p => `
+        <div class="product-card" onclick="openModal(${p.id})">
+            <img src="${p.img}" onerror="this.src='https://via.placeholder.com/200'">
+            <h3>${p.name}</h3>
+            <p class="price">${p.price.toLocaleString()} FCFA</p>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart(${p.id})">Ajouter au panier</button>
+        </div>
+    `).join('');
+}
+
+// --- GESTION DE LA MODALE ---
+function openModal(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    const modal = document.getElementById('product-modal');
+    document.getElementById('modal-img').src = product.img;
+    document.getElementById('modal-name').innerText = product.name;
+    document.getElementById('modal-category').innerText = product.category;
+    document.getElementById('modal-price').innerText = product.price.toLocaleString() + ' FCFA';
+
+    // Description générée dynamiquement si absente
+    document.getElementById('modal-desc').innerText = `Découvrez le ${product.name}, un appareil haute performance conçu pour répondre à tous vos besoins technologiques. Qualité premium et garantie assurée par Pure Tech by PAD.`;
+
+    const addBtn = document.getElementById('modal-add-btn');
+    addBtn.onclick = () => {
+        addToCart(product.id);
+        closeModal();
+    };
+
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('product-modal').style.display = 'none';
+}
+
+// Fermer la modale en cliquant à l'extérieur
+window.onclick = function(event) {
+    const modal = document.getElementById('product-modal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Recherche & Filtres
+function searchProducts() {
+    const term = document.getElementById('search-input').value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(term));
+    displayProducts(filtered);
+}
+
+function filterProducts(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+    displayProducts(filtered);
+}
+
+// Panier Logic
+let cart = JSON.parse(localStorage.getItem('pureTechCart')) || [];
+
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (product) {
+        cart.push(product);
+        localStorage.setItem('pureTechCart', JSON.stringify(cart));
+        updateCart();
+        toggleCart();
+    }
+}
+
+function updateCart() {
+    const count = document.getElementById('cart-count');
+    const items = document.getElementById('cart-items');
+    const totalDisp = document.getElementById('cart-total');
+
+    if (count) count.innerText = cart.length;
+    if (items) {
+        items.innerHTML = cart.map((item, index) => `
+            <div style="display:flex; justify-content:space-between; padding:10px; border-bottom:1px solid #eee;">
+                <span>${item.name}</span>
+                <i class="fas fa-trash" style="color:red; cursor:pointer" onclick="removeFromCart(${index})"></i>
+            </div>
+        `).join('');
+    }
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    if (totalDisp) totalDisp.innerText = total.toLocaleString();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('pureTechCart', JSON.stringify(cart));
+    updateCart();
+}
+
+function toggleCart() {
+    document.getElementById('cart-sidebar').classList.toggle('active');
+}
+
+// WhatsApp Checkout
+function checkout() {
+    if (cart.length === 0) return alert("Panier vide");
+    let msg = "Bonjour Pure Tech by PAD, commande :\n";
+    cart.forEach(i => msg += `- ${i.name} (${i.price} F)\n`);
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    msg += `Total: ${total} FCFA`;
+    window.open(`https://wa.me/221781237568?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// Fonctions de contact
+function appelerPAD() {
+    window.location.href = "tel:+221781237568";
+}
+
+function envoyerEmail() {
+    window.location.href = "mailto:contact@puretechpad.com?subject=Demande d'information";
+}
+
+function ouvrirInstagram() {
+    window.open("https://www.instagram.com/puretechbypad", "_blank");
+}
