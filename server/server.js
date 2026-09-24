@@ -42,6 +42,7 @@ db.exec(`
 app.set('db', db);
 
 // --- ROUTES ---
+app.use(express.static(path.join(__dirname, '..')));
 app.use('/api/admin', adminRoutes);
 app.use('/api/products', productRoutes);
 
