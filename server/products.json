@@ -1,0 +1,1150 @@
+[
+  {
+    "id": 1,
+    "category": "smartphone",
+    "name": "IPhone X",
+    "price": 85000,
+    "img": "images/ix.jpg"
+  },
+  {
+    "id": 2,
+    "category": "smartphone",
+    "name": "Iphone XR",
+    "price": 95000,
+    "img": "images/ixr.jpg"
+  },
+  {
+    "id": 3,
+    "category": "smartphone",
+    "name": "IPhone 11",
+    "price": 125000,
+    "img": "images/i11.jpg"
+  },
+  {
+    "id": 4,
+    "category": "smartphone",
+    "name": "Iphone 11 Pro",
+    "price": 150000,
+    "img": "images/i11pro.jpg"
+  },
+  {
+    "id": 5,
+    "category": "smartphone",
+    "name": "iPhone 11 Pro max",
+    "price": 165000,
+    "img": "images/i11pm.jpg"
+  },
+  {
+    "id": 6,
+    "category": "smartphone",
+    "name": "Iphone 12",
+    "price": 150000,
+    "img": "images/i12.jpg"
+  },
+  {
+    "id": 7,
+    "category": "smartphone",
+    "name": "iPhone 12 Pro",
+    "price": 170000,
+    "img": "images/i12pro.jpg"
+  },
+  {
+    "id": 8,
+    "category": "smartphone",
+    "name": "Iphone 12 Pro Max",
+    "price": 200000,
+    "img": "images/i12pm.jpg"
+  },
+  {
+    "id": 9,
+    "category": "smartphone",
+    "name": "iPhone 13",
+    "price": 175000,
+    "img": "images/i13.jpg"
+  },
+  {
+    "id": 10,
+    "category": "smartphone",
+    "name": "Iphone 13 Pro",
+    "price": 250000,
+    "img": "images/i13pro.jpg"
+  },
+  {
+    "id": 11,
+    "category": "smartphone",
+    "name": "Iphone 13 Pro max",
+    "price": 280000,
+    "img": "images/i13pm.jpg"
+  },
+  {
+    "id": 12,
+    "category": "smartphone",
+    "name": "Iphone 14",
+    "price": 210000,
+    "img": "images/i14.jpg"
+  },
+  {
+    "id": 13,
+    "category": "smartphone",
+    "name": "Iphone 14 Plus",
+    "price": 240000,
+    "img": "images/i14plus.jpg"
+  },
+  {
+    "id": 14,
+    "category": "smartphone",
+    "name": "Iphone 14 Pro",
+    "price": 280000,
+    "img": "images/i14pro.jpg"
+  },
+  {
+    "id": 15,
+    "category": "smartphone",
+    "name": "Iphone 14 Pro Max",
+    "price": 350000,
+    "img": "images/i14pm.jpg"
+  },
+  {
+    "id": 16,
+    "category": "smartphone",
+    "name": "Iphone 15",
+    "price": 290000,
+    "img": "images/i15.jpg"
+  },
+  {
+    "id": 17,
+    "category": "smartphone",
+    "name": "Iphone 15 Plus",
+    "price": 330000,
+    "img": "images/i15plus.jpg"
+  },
+  {
+    "id": 18,
+    "category": "smartphone",
+    "name": "Iphone 15 Pro",
+    "price": 350000,
+    "img": "images/i15pro.jpg"
+  },
+  {
+    "id": 19,
+    "category": "smartphone",
+    "name": "Iphone 15 Pro Max",
+    "price": 390000,
+    "img": "images/i15pm.jpg"
+  },
+  {
+    "id": 20,
+    "category": "smartphone",
+    "name": "Iphone 16",
+    "price": 350000,
+    "img": "images/i16.jpg"
+  },
+  {
+    "id": 21,
+    "category": "smartphone",
+    "name": "Iphone 16 Plus",
+    "price": 420000,
+    "img": "images/i16plus.jpg"
+  },
+  {
+    "id": 22,
+    "category": "smartphone",
+    "name": "Iphone 16 Pro",
+    "price": 450000,
+    "img": "images/i16pro.jpg"
+  },
+  {
+    "id": 23,
+    "category": "smartphone",
+    "name": "Iphone 16 Pro Max",
+    "price": 480000,
+    "img": "images/i16pm.jpg"
+  },
+  {
+    "id": 24,
+    "category": "smartphone",
+    "name": "Iphone 17",
+    "price": 450000,
+    "img": "images/i17.jpg"
+  },
+  {
+    "id": 25,
+    "category": "smartphone",
+    "name": "Iphone Air",
+    "price": 530000,
+    "img": "images/Air.jpg"
+  },
+  {
+    "id": 26,
+    "category": "smartphone",
+    "name": "Iphone 17 Pro",
+    "price": 650000,
+    "img": "images/i17pro.jpg"
+  },
+  {
+    "id": 27,
+    "category": "smartphone",
+    "name": "Iphone 17 Pro Max",
+    "price": 780000,
+    "img": "images/i17pm.jpg"
+  },
+  {
+    "id": 28,
+    "category": "smartphone",
+    "name": "Iphone 18 Pro",
+    "price": 950000,
+    "img": "images/i18p.jpg"
+  },
+  {
+    "id": 29,
+    "category": "smartphone",
+    "name": "Iphone 18 Pro Max",
+    "price": 1150000,
+    "img": "images/i18pm.jpg"
+  },
+  {
+    "id": 30,
+    "category": "smartphone",
+    "name": "Iphone Duo",
+    "price": 1550000,
+    "img": "images/iduo.jpg"
+  },
+  {
+    "id": 31,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S20",
+    "price": 90000,
+    "img": "images/s20.jpg"
+  },
+  {
+    "id": 32,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S21",
+    "price": 120000,
+    "img": "images/s21.jpg"
+  },
+  {
+    "id": 33,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S21 Plus",
+    "price": 150000,
+    "img": "images/s21plus.jpg"
+  },
+  {
+    "id": 34,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S21 Ultra",
+    "price": 175000,
+    "img": "images/s21ultra.jpg"
+  },
+  {
+    "id": 35,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S22",
+    "price": 180000,
+    "img": "images/s22.jpg"
+  },
+  {
+    "id": 36,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S22 Plus",
+    "price": 200000,
+    "img": "images/s22plus.jpg"
+  },
+  {
+    "id": 37,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S22 Ultra",
+    "price": 230000,
+    "img": "images/s22ultra.jpg"
+  },
+  {
+    "id": 38,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S23",
+    "price": 280000,
+    "img": "images/s23.jpg"
+  },
+  {
+    "id": 39,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S23 Plus",
+    "price": 300000,
+    "img": "images/s23plus.jpg"
+  },
+  {
+    "id": 40,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S23 Ultra",
+    "price": 350000,
+    "img": "images/s23ultra.jpg"
+  },
+  {
+    "id": 41,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S24",
+    "price": 300000,
+    "img": "images/s24.jpg"
+  },
+  {
+    "id": 42,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S24 plus",
+    "price": 350000,
+    "img": "images/s24plus.jpg"
+  },
+  {
+    "id": 43,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 400000,
+    "img": "images/s24ultra.jpg"
+  },
+  {
+    "id": 44,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S25",
+    "price": 370000,
+    "img": "images/s25.jpg"
+  },
+  {
+    "id": 45,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S25 Plus",
+    "price": 390000,
+    "img": "images/s25plus.jpg"
+  },
+  {
+    "id": 46,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S25 Ultra",
+    "price": 480000,
+    "img": "images/s25ultra.jpg"
+  },
+  {
+    "id": 47,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S26",
+    "price": 450000,
+    "img": "images/s26.jpg"
+  },
+  {
+    "id": 48,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S26 Plus",
+    "price": 500000,
+    "img": "images/s26plus.jpg"
+  },
+  {
+    "id": 49,
+    "category": "smartphone",
+    "name": "Samsung Galaxy S26 Ultra",
+    "price": 700000,
+    "img": "images/s26ultra.jpg"
+  },
+  {
+    "id": 50,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Note 9",
+    "price": 75000,
+    "img": "images/n9.jpg"
+  },
+  {
+    "id": 51,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Note 10 Plus",
+    "price": 120000,
+    "img": "images/n10plus.jpg"
+  },
+  {
+    "id": 52,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Note 20",
+    "price": 150000,
+    "img": "images/n20.jpg"
+  },
+  {
+    "id": 53,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A06",
+    "price": 65000,
+    "img": "images/a06.jpg"
+  },
+  {
+    "id": 54,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A16",
+    "price": 80000,
+    "img": "images/a16.jpg"
+  },
+  {
+    "id": 55,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A07",
+    "price": 75000,
+    "img": "images/a07.jpg"
+  },
+  {
+    "id": 56,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A17",
+    "price": 110000,
+    "img": "images/a17.jpg"
+  },
+  {
+    "id": 57,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A25",
+    "price": 150000,
+    "img": "images/a25.jpg"
+  },
+  {
+    "id": 58,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A35",
+    "price": 160000,
+    "img": "images/a35.jpg"
+  },
+  {
+    "id": 59,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A55",
+    "price": 170000,
+    "img": "images/a55.jpg"
+  },
+  {
+    "id": 60,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A56",
+    "price": 180000,
+    "img": "images/a56.jpg"
+  },
+  {
+    "id": 61,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A34",
+    "price": 140000,
+    "img": "images/a34.jpg"
+  },
+  {
+    "id": 62,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A15",
+    "price": 70000,
+    "img": "images/a15.jpg"
+  },
+  {
+    "id": 63,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A26",
+    "price": 120000,
+    "img": "images/a26.jpg"
+  },
+  {
+    "id": 64,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A54 5G",
+    "price": 125000,
+    "img": "images/a54G.jpg"
+  },
+  {
+    "id": 65,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A05s",
+    "price": 60000,
+    "img": "images/a05s.jpg"
+  },
+  {
+    "id": 66,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A71",
+    "price": 75000,
+    "img": "images/a71.jpg"
+  },
+  {
+    "id": 67,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A51",
+    "price": 60000,
+    "img": "images/a51.jpg"
+  },
+  {
+    "id": 68,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A57 5G",
+    "price": 250000,
+    "img": "images/a57.jpg"
+  },
+  {
+    "id": 69,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A36",
+    "price": 150000,
+    "img": "images/a36.jpg"
+  },
+  {
+    "id": 70,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A37 5G",
+    "price": 170000,
+    "img": "images/a37.jpg"
+  },
+  {
+    "id": 71,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A56 5G",
+    "price": 200000,
+    "img": "images/a56.jpg"
+  },
+  {
+    "id": 72,
+    "category": "smartphone",
+    "name": "Samsung Galaxy A27 5G",
+    "price": 135000,
+    "img": "images/a27.jpg"
+  },
+  {
+    "id": 73,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold3",
+    "price": 280000,
+    "img": "images/f3.jpg"
+  },
+  {
+    "id": 74,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold4",
+    "price": 320000,
+    "img": "images/f4.jpg"
+  },
+  {
+    "id": 75,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold5",
+    "price": 370000,
+    "img": "images/f5.jpg"
+  },
+  {
+    "id": 76,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold6",
+    "price": 500000,
+    "img": "images/f6.jpg"
+  },
+  {
+    "id": 77,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold7",
+    "price": 750000,
+    "img": "images/f7.jpg"
+  },
+  {
+    "id": 78,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold8 Passeport",
+    "price": 950000,
+    "img": "images/f8.jpg"
+  },
+  {
+    "id": 79,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Fold8 Ultra",
+    "price": 1200000,
+    "img": "images/f8ultra.jpg"
+  },
+  {
+    "id": 80,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip3",
+    "price": 150000,
+    "img": "images/flip3.jpg"
+  },
+  {
+    "id": 81,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip4",
+    "price": 175000,
+    "img": "images/flip4.jpg"
+  },
+  {
+    "id": 82,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip5",
+    "price": 200000,
+    "img": "images/flip5.jpg"
+  },
+  {
+    "id": 83,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip6",
+    "price": 290000,
+    "img": "images/flip6.jpg"
+  },
+  {
+    "id": 84,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip7",
+    "price": 350000,
+    "img": "images/flip7.jpg"
+  },
+  {
+    "id": 85,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Flip8",
+    "price": 650000,
+    "img": "images/flip8.jpg"
+  },
+  {
+    "id": 86,
+    "category": "smartphone",
+    "name": "Samsung Galaxy Trifold",
+    "price": 3500000,
+    "img": "images/tfold.jpg"
+  },
+  {
+    "id": 87,
+    "category": "smartphone",
+    "name": "Tecno Phantom V Fold2 5G",
+    "price": 360000,
+    "img": "images/phantom.jpg"
+  },
+  {
+    "id": 88,
+    "category": "smartphone",
+    "name": "Tecno Phantom V Flip2 5G",
+    "price": 250000,
+    "img": "images/flip2.jpg"
+  },
+  {
+    "id": 89,
+    "category": "smartphone",
+    "name": "Tecno Camon 40",
+    "price": 130000,
+    "img": "images/c40.jpg"
+  },
+  {
+    "id": 90,
+    "category": "smartphone",
+    "name": "Tecno Camon 40 pro 5G",
+    "price": 145000,
+    "img": "images/c40p.jpg"
+  },
+  {
+    "id": 91,
+    "category": "smartphone",
+    "name": "Tecno Spark 40 pro plus",
+    "price": 125000,
+    "img": "images/s40pp.jpg"
+  },
+  {
+    "id": 92,
+    "category": "smartphone",
+    "name": "Tecno Spark 40",
+    "price": 90000,
+    "img": "images/s40.jpg"
+  },
+  {
+    "id": 93,
+    "category": "smartphone",
+    "name": "Tecno pop 10",
+    "price": 50000,
+    "img": "images/p10.jpg"
+  },
+  {
+    "id": 94,
+    "category": "smartphone",
+    "name": "Tecno spark 50",
+    "price": 130000,
+    "img": "images/spark50.jpg"
+  },
+  {
+    "id": 95,
+    "category": "smartphone",
+    "name": "Tecno CAMON 50",
+    "price": 180000,
+    "img": "images/camon50.jpg"
+  },
+  {
+    "id": 96,
+    "category": "smartphone",
+    "name": "Tecno Camon slim",
+    "price": 250000,
+    "img": "images/camonslim.jpg"
+  },
+  {
+    "id": 97,
+    "category": "tablette",
+    "name": "Galaxy Tab S11 Ultra",
+    "price": 750000,
+    "img": "images/tabs11.jpg"
+  },
+  {
+    "id": 98,
+    "category": "tablette",
+    "name": "Galaxy Tab S9 Ultra",
+    "price": 350000,
+    "img": "images/tabs9.jpg"
+  },
+  {
+    "id": 99,
+    "category": "tablette",
+    "name": "Galaxy Tab S9 FE",
+    "price": 150000,
+    "img": "images/tabs9fe.jpg"
+  },
+  {
+    "id": 100,
+    "category": "tablette",
+    "name": "Galaxy Tab A9+",
+    "price": 160000,
+    "img": "images/taba9.jpg"
+  },
+  {
+    "id": 101,
+    "category": "tablette",
+    "name": "Galaxy Tab S8",
+    "price": 150000,
+    "img": "images/tabs8.jpg"
+  },
+  {
+    "id": 102,
+    "category": "tablette",
+    "name": "Galaxy Tab A7 Lite",
+    "price": 65000,
+    "img": "images/taba7.jpg"
+  },
+  {
+    "id": 103,
+    "category": "tablette",
+    "name": "Galaxy Tab A8",
+    "price": 85000,
+    "img": "images/taba8.jpg"
+  },
+  {
+    "id": 104,
+    "category": "tablette",
+    "name": "Galaxy Tab S6",
+    "price": 130000,
+    "img": "images/tabs6.jpg"
+  },
+  {
+    "id": 105,
+    "category": "tablette",
+    "name": "iPad Air M2",
+    "price": 350000,
+    "img": "images/ipadair.jpg"
+  },
+  {
+    "id": 106,
+    "category": "tablette",
+    "name": "iPad Pro M4",
+    "price": 590000,
+    "img": "images/ipadprom4.jpg"
+  },
+  {
+    "id": 107,
+    "category": "tablette",
+    "name": "iPad Mini 6",
+    "price": 300000,
+    "img": "images/ipadmini.jpg"
+  },
+  {
+    "id": 108,
+    "category": "tablette",
+    "name": "iPad (10ème Gén)",
+    "price": 220000,
+    "img": "images/ipad10.jpg"
+  },
+  {
+    "id": 109,
+    "category": "tablette",
+    "name": "iPad (11ème Gén)",
+    "price": 300000,
+    "img": "images/ipad11.jpg"
+  },
+  {
+    "id": 110,
+    "category": "tablette",
+    "name": "iPad Air 2",
+    "price": 70000,
+    "img": "images/ipadair2.jpg"
+  },
+  {
+    "id": 111,
+    "category": "tablette",
+    "name": "iPad (8ème Gén)",
+    "price": 100000,
+    "img": "images/ipad8.jpg"
+  },
+  {
+    "id": 112,
+    "category": "googlepixel",
+    "name": "Google Pixel 6",
+    "price": 100000,
+    "img": "images/px6.jpg"
+  },
+  {
+    "id": 113,
+    "category": "googlepixel",
+    "name": "Google Pixel 6 Pro",
+    "price": 120000,
+    "img": "images/px6pro.jpg"
+  },
+  {
+    "id": 114,
+    "category": "googlepixel",
+    "name": "Google Pixel 7",
+    "price": 150000,
+    "img": "images/px7.jpg"
+  },
+  {
+    "id": 115,
+    "category": "googlepixel",
+    "name": "Google Pixel 7 Pro",
+    "price": 170000,
+    "img": "images/px7pro.jpg"
+  },
+  {
+    "id": 116,
+    "category": "googlepixel",
+    "name": "Google Pixel 8",
+    "price": 200000,
+    "img": "images/px8.jpg"
+  },
+  {
+    "id": 117,
+    "category": "googlepixel",
+    "name": "Google Pixel 8 Pro",
+    "price": 230000,
+    "img": "images/px8pro.jpg"
+  },
+  {
+    "id": 118,
+    "category": "googlepixel",
+    "name": "Google Pixel 9",
+    "price": 270000,
+    "img": "images/px9.jpg"
+  },
+  {
+    "id": 119,
+    "category": "googlepixel",
+    "name": "Google Pixel 9 Pro XL",
+    "price": 370000,
+    "img": "images/px9pro.jpg"
+  },
+  {
+    "id": 120,
+    "category": "googlepixel",
+    "name": "Google Pixel 10",
+    "price": 390000,
+    "img": "images/px10.jpg"
+  },
+  {
+    "id": 121,
+    "category": "googlepixel",
+    "name": "Google Pixel 10 Pro XL",
+    "price": 450000,
+    "img": "images/px10pro.jpg"
+  },
+  {
+    "id": 122,
+    "category": "googlepixel",
+    "name": "Google Pixel 11",
+    "price": 550000,
+    "img": "images/px11.jpg"
+  },
+  {
+    "id": 123,
+    "category": "googlepixel",
+    "name": "Google Pixel 11 Pro XL",
+    "price": 580000,
+    "img": "images/px11pro.jpg"
+  },
+  {
+    "id": 124,
+    "category": "googlepixel",
+    "name": "Google Pixel 11 Pro Fold",
+    "price": 1100000,
+    "img": "images/px11pfold.jpg"
+  },
+  {
+    "id": 125,
+    "category": "audio",
+    "name": "AirPods Pro 2",
+    "price": 80000,
+    "img": "images/ap2.jpg"
+  },
+  {
+    "id": 126,
+    "category": "audio",
+    "name": "AirPods 3",
+    "price": 75000,
+    "img": "images/a3.jpg"
+  },
+  {
+    "id": 127,
+    "category": "audio",
+    "name": "AirPods 4 ANC",
+    "price": 90000,
+    "img": "images/a4anc.jpg"
+  },
+  {
+    "id": 128,
+    "category": "audio",
+    "name": "AirPods 4",
+    "price": 75000,
+    "img": "images/a4.jpg"
+  },
+  {
+    "id": 129,
+    "category": "audio",
+    "name": "AirPods Max Type-C",
+    "price": 190000,
+    "img": "images/amaxc.jpg"
+  },
+  {
+    "id": 130,
+    "category": "audio",
+    "name": "AirPods Max",
+    "price": 150000,
+    "img": "images/amax.jpg"
+  },
+  {
+    "id": 131,
+    "category": "audio",
+    "name": "AirPods Pro 2 Type C",
+    "price": 85000,
+    "img": "images/ap2c.jpg"
+  },
+  {
+    "id": 132,
+    "category": "audio",
+    "name": "Sony WH-1000XM5",
+    "price": 250000,
+    "img": "images/sony_xm5.jpg"
+  },
+  {
+    "id": 133,
+    "category": "audio",
+    "name": "Bose QuietComfort Ultra",
+    "price": 175000,
+    "img": "images/bose_qc.jpg"
+  },
+  {
+    "id": 134,
+    "category": "audio",
+    "name": "Beats Studio Pro",
+    "price": 180000,
+    "img": "images/beats_studio.jpg"
+  },
+  {
+    "id": 135,
+    "category": "audio",
+    "name": "JBL Live 660NC",
+    "price": 135000,
+    "img": "images/jbl_live.jpg"
+  },
+  {
+    "id": 136,
+    "category": "audio",
+    "name": "Marshall Major IV",
+    "price": 75000,
+    "img": "images/marshall.jpg"
+  },
+  {
+    "id": 137,
+    "category": "audio",
+    "name": "Galaxy Buds 2 Pro",
+    "price": 100000,
+    "img": "images/buds2p.jpg"
+  },
+  {
+    "id": 138,
+    "category": "audio",
+    "name": "AirPods 5",
+    "price": 160000,
+    "img": "images/a5.jpg"
+  },
+  {
+    "id": 139,
+    "category": "accessoire",
+    "name": "Chargeur Samsung 25W",
+    "price": 10000,
+    "img": "images/chargeur.jpg"
+  },
+  {
+    "id": 140,
+    "category": "accessoire",
+    "name": "AirPods 2",
+    "price": 60000,
+    "img": "images/airpods2.jpg"
+  },
+  {
+    "id": 141,
+    "category": "accessoire",
+    "name": "Apple Watch Series 10",
+    "price": 170000,
+    "img": "images/aw10.jpg"
+  },
+  {
+    "id": 142,
+    "category": "accessoire",
+    "name": "Chargeur MagSafe 20W",
+    "price": 25000,
+    "img": "images/magsafe.jpg"
+  },
+  {
+    "id": 143,
+    "category": "accessoire",
+    "name": "Coque Silicone iPhone",
+    "price": 5000,
+    "img": "images/coque_apple.jpg"
+  },
+  {
+    "id": 144,
+    "category": "accessoire",
+    "name": "Galaxy Buds 3 Pro",
+    "price": 165000,
+    "img": "images/buds3.jpg"
+  },
+  {
+    "id": 145,
+    "category": "accessoire",
+    "name": "Galaxy Watch 7",
+    "price": 190000,
+    "img": "images/gw7.jpg"
+  },
+  {
+    "id": 146,
+    "category": "accessoire",
+    "name": "Adaptateur Secteur 25W",
+    "price": 5000,
+    "img": "images/chargeur_sam.jpg"
+  },
+  {
+    "id": 147,
+    "category": "accessoire",
+    "name": "Apple Pencil",
+    "price": 25000,
+    "img": "images/pencil.jpg"
+  },
+  {
+    "id": 148,
+    "category": "accessoire",
+    "name": "Powerbank 20000mAh",
+    "price": 20000,
+    "img": "images/powerbank.jpg"
+  },
+  {
+    "id": 149,
+    "category": "accessoire",
+    "name": "Câble USB-C Rapide",
+    "price": 10000,
+    "img": "images/cable.jpg"
+  },
+  {
+    "id": 150,
+    "category": "accessoire",
+    "name": "Support Voiture MagSafe",
+    "price": 10000,
+    "img": "images/support.jpg"
+  },
+  {
+    "id": 151,
+    "category": "accessoire",
+    "name": "Écouteurs Type-C",
+    "price": 10000,
+    "img": "images/ecouteurs.jpg"
+  },
+  {
+    "id": 152,
+    "category": "ordinateur",
+    "name": "MacBook Air 2020",
+    "price": 380000,
+    "img": "images/mba_2020.jpg"
+  },
+  {
+    "id": 153,
+    "category": "ordinateur",
+    "name": "MacBook Pro 2019",
+    "price": 400000,
+    "img": "images/mbp_2019.jpg"
+  },
+  {
+    "id": 154,
+    "category": "ordinateur",
+    "name": "MacBook Pro M2",
+    "price": 420000,
+    "img": "images/mbp_m2.jpg"
+  },
+  {
+    "id": 155,
+    "category": "ordinateur",
+    "name": "MacBook NEO",
+    "price": 650000,
+    "img": "images/mneo.jpg"
+  },
+  {
+    "id": 156,
+    "category": "ordinateur",
+    "name": "HP Elitebook 745 G7 10TH Tactile",
+    "price": 230000,
+    "img": "images/hp_elitebook.jpg"
+  },
+  {
+    "id": 157,
+    "category": "ordinateur",
+    "name": "HP Envy x360",
+    "price": 270000,
+    "img": "images/hp_envy.jpg"
+  },
+  {
+    "id": 158,
+    "category": "ordinateur",
+    "name": "HP 840 G5 8TH ",
+    "price": 180000,
+    "img": "images/hp_840.jpg"
+  },
+  {
+    "id": 159,
+    "category": "ordinateur",
+    "name": "Dell Latitude 7490",
+    "price": 190000,
+    "img": "images/dell_7490.jpg"
+  },
+  {
+    "id": 160,
+    "category": "ordinateur",
+    "name": "Dell XPS 13",
+    "price": 250000,
+    "img": "images/dell_xps13.jpg"
+  },
+  {
+    "id": 161,
+    "category": "ordinateur",
+    "name": "Dell Latitude 7280",
+    "price": 180000,
+    "img": "images/dell_7280.jpg"
+  },
+  {
+    "id": 162,
+    "category": "ordinateur",
+    "name": "Lenovo ThinkPad X1",
+    "price": 170000,
+    "img": "images/thinkpad.jpg"
+  },
+  {
+    "id": 163,
+    "category": "ordinateur",
+    "name": "Lenovo ThinkPad T470 ",
+    "price": 160000,
+    "img": "images/t470.jpg"
+  },
+  {
+    "id": 164,
+    "category": "ordinateur",
+    "name": "Lenovo ThinkPad T460s",
+    "price": 150000,
+    "img": "images/t460s.jpg"
+  }
+]

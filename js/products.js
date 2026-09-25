@@ -1,4 +1,4 @@
-const products = [
+let products = [
     // --- IPHONE ---
     { id: 1, category: "smartphone", name: "IPhone X", price: 75000, img: "images/ix.jpg"},
     { id: 2, category: "smartphone", name: "Iphone XR", price: 95000, img: "images/ixr.jpg"},

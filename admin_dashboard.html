@@ -3,53 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Tech Admin | Dashboard</title>
+    <title>Admin Dashboard | Pure Tech by PAD</title>
     <link rel="stylesheet" href="css/puretechstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .admin-container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
-        .header-admin { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: white; padding: 1rem 2rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .btn-logout { background: #ff4d4d; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
-
-        .grid-admin { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
-
-        /* Formulaire */
-        .add-product-card { background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); height: fit-content; }
-        .add-product-card h3 { margin-top: 0; margin-bottom: 1rem; }
-        .form-group { margin-bottom: 1rem; text-align: left; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-        .btn-save { width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; }
-
-        /* Tableau */
-        .products-card { background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #fafafa; }
-        .btn-delete { background: #ff4d4d; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
-        .img-thumb { width: 40px; height: 40px; border-radius: 5px; object-fit: cover; }
+        :root {
+            --admin-bg: #f4f7f6;
+            --sidebar-width: 250px;
+        }
+        body { background-color: var(--admin-bg); display: flex; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .sidebar { width: var(--sidebar-width); height: 100vh; background: #2c3e50; color: white; position: fixed; padding: 20px; }
+        .sidebar h2 { text-align: center; margin-bottom: 30px; color: #3498db; }
+        .sidebar nav a { display: block; color: white; text-decoration: none; padding: 15px; margin-bottom: 10px; border-radius: 5px; transition: 0.3s; }
+        .sidebar nav a:hover { background: #34495e; }
+        .main-content { margin-left: var(--sidebar-width); padding: 30px; width: calc(100% - var(--sidebar-width)); }
+        .header-admin { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; color: #333; }
+        .btn-add { background: #2ecc71; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-edit { background: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; }
+        .btn-delete { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 10px; width: 400px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+        .btn-save { background: #2ecc71; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Pure Tech Admin</h2>
+        <nav>
+            <a href="#"><i class="fas fa-box"></i> Produits</a>
+            <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+            <a href="index.html"><i class="fas fa-external-link-alt"></i> Voir le Site</a>
+            <a href="#" onclick="logout()" style="margin-top: 50px; color: #e74c3c;"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+        </nav>
+    </div>
 
-    <div class="admin-container">
+    <div class="main-content">
         <div class="header-admin">
-            <h2><i class="fas fa-tachometer-alt"></i> Tableau de Bord Admin</h2>
-            <button class="btn-logout" onclick="logout()">Déconnexion</button>
+            <h1>Gestion des Produits</h1>
+            <button class="btn-add" onclick="openModal()"><i class="fas fa-plus"></i> Ajouter un Produit</button>
         </div>
 
-        <div class="grid-admin">
-            <!-- Formulaire d'ajout -->
-            <div class="add-product-card">
-                <h3>Ajouter un Produit</h3>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Nom</th>
+                        <th>Catégorie</th>
+                        <th>Prix (FCFA)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-product-list">
+                    <!-- Chargé par JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Produit -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Ajouter un Produit</h2>
+            <form id="product-form">
+                <input type="hidden" id="prod-id">
                 <div class="form-group">
                     <label>Nom du produit</label>
-                    <input type="text" id="name" placeholder="ex: iPhone 16 Pro">
+                    <input type="text" id="prod-name" required>
                 </div>
                 <div class="form-group">
                     <label>Catégorie</label>
-                    <select id="category">
+                    <select id="prod-category">
                         <option value="smartphone">Smartphone</option>
                         <option value="audio">Audio</option>
                         <option value="accessoire">Accessoire</option>
@@ -60,112 +92,104 @@
                 </div>
                 <div class="form-group">
                     <label>Prix (FCFA)</label>
-                    <input type="number" id="price" placeholder="ex: 450000">
+                    <input type="number" id="prod-price" required>
                 </div>
                 <div class="form-group">
-                    <label>Image (chemin local)</label>
-                    <input type="text" id="img" placeholder="images/iphone16.jpg">
+                    <label>Chemin de l'image (ex: images/iphone15.jpg)</label>
+                    <input type="text" id="prod-img" required>
                 </div>
-                <button class="btn-save" onclick="addProduct()">Enregistrer le produit</button>
-            </div>
-
-            <!-- Liste des produits -->
-            <div class="products-card">
-                <h3>Inventaire Actuel</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Img</th>
-                            <th>Nom</th>
-                            <th>Catégorie</th>
-                            <th>Prix</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="admin-product-list">
-                        <!-- Rempli par JS -->
-                    </tbody>
-                </table>
-            </div>
+                <button type="submit" class="btn-save">Enregistrer</button>
+                <button type="button" onclick="closeModal()" style="background:none; border:none; color:gray; cursor:pointer; width:100%; margin-top:10px;">Annuler</button>
+            </form>
         </div>
     </div>
 
     <script>
-        const TOKEN = localStorage.getItem('adminToken');
-
-        if (!TOKEN) {
-            window.location.href = 'admin_login.html';
-        }
+        const API_URL = 'http://localhost:5000/api/products';
 
         async function fetchProducts() {
-            try {
-                const response = await fetch('http://localhost:5000/api/products');
-                const products = await response.json();
-                const list = document.getElementById('admin-product-list');
-                list.innerHTML = products.map(p => `
-                    <tr>
-                        <td><img src="${p.img}" class="img-thumb"></td>
-                        <td>${p.name}</td>
-                        <td>${p.category}</td>
-                        <td>${p.price.toLocaleString()} F</td>
-                        <td><button class="btn-delete" onclick="deleteProduct(${p.id})">Supprimer</button></td>
-                    </tr>
-                `).join('');
-            } catch (err) {
-                console.error('Erreur chargement produits admin');
-            }
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            const list = document.getElementById('admin-product-list');
+            list.innerHTML = data.map(p => `
+                <tr>
+                    <td>${p.id}</td>
+                    <td><img src="${p.img}" width="40" height="40" style="object-fit:cover; border-radius:5px;"></td>
+                    <td>${p.name}</td>
+                    <td>${p.category}</td>
+                    <td>${p.price.toLocaleString()}</td>
+                    <td>
+                        <button class="btn-edit" onclick="editProduct(${p.id})"><i class="fas fa-edit"></i></button>
+                        <button class="btn-delete" onclick="deleteProduct(${p.id})"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
         }
 
-        async function addProduct() {
+        function openModal(id = null) {
+            const modal = document.getElementById('product-modal');
+            const form = document.getElementById('product-form');
+            form.reset();
+            document.getElementById('prod-id').value = '';
+            document.getElementById('modal-title').innerText = 'Ajouter un Produit';
+
+            if (id) {
+                fetch(API_URL).then(res => res.json()).then(products => {
+                    const p = products.find(prod => prod.id === id);
+                    document.getElementById('prod-id').value = p.id;
+                    document.getElementById('prod-name').value = p.name;
+                    document.getElementById('prod-category').value = p.category;
+                    document.getElementById('prod-price').value = p.price;
+                    document.getElementById('prod-img').value = p.img;
+                    document.getElementById('modal-title').innerText = 'Modifier le Produit';
+                });
+            }
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').style.display = 'none';
+        }
+
+        document.getElementById('product-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('prod-id').value;
             const product = {
-                name: document.getElementById('name').value,
-                category: document.getElementById('category').value,
-                price: Number(document.getElementById('price').value),
-                img: document.getElementById('img').value
+                name: document.getElementById('prod-name').value,
+                category: document.getElementById('prod-category').value,
+                price: parseInt(document.getElementById('prod-price').value),
+                img: document.getElementById('prod-img').value
             };
 
-            try {
-                const response = await fetch('http://localhost:5000/api/products', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${TOKEN}`
-                    },
+            if (id) {
+                await fetch(`${API_URL}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(product)
                 });
+            } else {
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(product)
+                });
+            }
+            closeModal();
+            fetchProducts();
+        };
 
-                if (response.ok) {
-                    alert('Produit ajouté !');
-                    location.reload();
-                } else {
-                    alert('Erreur lors de l\'ajout. Vérifiez vos données.');
-                }
-            } catch (err) {
-                alert('Erreur serveur');
+        async function deleteProduct(id) {
+            if (confirm('Supprimer ce produit ?')) {
+                await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+                fetchProducts();
             }
         }
 
-        async function deleteProduct(id) {
-            if (!confirm('Supprimer ce produit ?')) return;
-
-            try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${TOKEN}` }
-                });
-
-                if (response.ok) {
-                    fetchProducts();
-                } else {
-                    alert('Erreur de suppression');
-                }
-            } catch (err) {
-                alert('Erreur serveur');
-            }
+        function editProduct(id) {
+            openModal(id);
         }
 
         function logout() {
-            localStorage.removeItem('adminToken');
             window.location.href = 'admin_login.html';
         }
 

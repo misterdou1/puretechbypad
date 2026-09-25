@@ -5,16 +5,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     loader.innerHTML = '<div class="loader"></div>';
     document.body.appendChild(loader);
 
-    const loadingTimeout = setTimeout(() => {
-        console.warn("Timeout serveur : on passe en mode secours.");
-        document.body.classList.add('body-loaded');
-        setTimeout(() => loader.remove(), 500);
-    }, 2000);
-
     try {
         await loadProducts();
         updateCart();
-        clearTimeout(loadingTimeout);
         document.body.classList.add('body-loaded');
         setTimeout(() => loader.remove(), 500);
     } catch (error) {
@@ -23,21 +16,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => loader.remove(), 500);
     }
 
-    window.onscroll = function() {
-        const btn = document.getElementById("scrollTop");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
-        }
-    };
-
     window.addEventListener('scroll', function() {
         const scrollBtn = document.getElementById("scrollTop");
-        if (window.scrollY > 300) {
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
+        if (scrollBtn) {
+            scrollBtn.style.display = window.scrollY > 300 ? "flex" : "none";
         }
     });
 });
@@ -129,17 +111,17 @@ function sortProducts(sortType) {
 }
 
 async function loadProducts() {
-    console.log("Tentative de chargement serveur...");
+    console.log("Tentative de chargement depuis le serveur admin...");
     try {
-        const response = await fetch('http://localhost:5000/api/products');
+        // Ajout d'un paramètre aléatoire pour éviter le cache du navigateur
+        const response = await fetch(`http://localhost:5000/api/products?t=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Réponse serveur non OK');
 
         const serverProducts = await response.json();
         console.log("Produits chargés depuis le serveur");
         products = serverProducts;
     } catch (error) {
-        console.warn("Utilisation de la liste statique (products.js)");
-        // 'products' est déjà défini globalement par products.js chargé dans l'HTML
+        console.warn("Serveur absent, utilisation de la liste statique (products.js)");
         if (typeof products === 'undefined' || products.length === 0) {
             console.error("ERREUR CRITIQUE : Aucune donnée produit trouvée !");
         }

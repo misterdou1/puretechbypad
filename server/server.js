@@ -1,61 +1,66 @@
 const express = require('express');
-const helmet = require('helmet');
-const cors = require('cors');
-const Database = require('better-sqlite3');
-require('dotenv').config();
-
-const productRoutes = require('./routes/productRoutes');
-const adminRoutes = require('./routes/adminRoutes');
-
-const app = express();
-
-// --- SÉCURITÉ ---
-app.use(helmet());
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
-}));
-app.use(express.json());
-
-// --- BASE DE DONNÉES SQLITE ---
 const fs = require('fs');
+const cors = require('cors');
 const path = require('path');
 
-// Dossier pour le stockage persistant (indispensable pour Render/Railway)
-const DATA_DIR = path.join(__dirname, 'data');
-if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-}
+const app = express();
+const PORT = 5000;
+const PRODUCTS_FILE = path.join(__dirname, 'products.json');
 
-const dbPath = path.join(DATA_DIR, 'database.db');
-const db = new Database(dbPath);
-db.exec(`
-  CREATE TABLE IF NOT EXISTS products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    category TEXT NOT NULL,
-    price REAL NOT NULL,
-    img TEXT NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
-`);
-app.set('db', db);
+app.use(cors());
+app.use(express.json());
 
-// --- ROUTES ---
-// Servir les fichiers statiques depuis la racine du projet
-const rootDir = path.join(__dirname, '..');
-console.log('Serving static files from:', rootDir);
-app.use(express.static(rootDir));
-
-app.use('/api/admin', adminRoutes);
-app.use('/api/products', productRoutes);
-
-app.get('/', (req, res) => {
-    res.send('Serveur Pure Tech est en ligne avec SQLite 🚀');
+// Route principale pour les produits (compatible avec le site et l'admin)
+app.get('/api/products', (req, res) => {
+    fs.readFile(PRODUCTS_FILE, 'utf8', (err, data) => {
+        if (err) {
+            console.error("Erreur lecture fichier:", err);
+            return res.status(500).json({ error: 'Erreur lecture fichier' });
+        }
+        try {
+            const products = JSON.parse(data);
+            res.json(products);
+        } catch (e) {
+            res.status(500).json({ error: 'Erreur format JSON' });
+        }
+    });
 });
 
-const PORT = process.env.PORT || 5000;
+// Ajouter un produit
+app.post('/api/products', (req, res) => {
+    const data = fs.readFileSync(PRODUCTS_FILE, 'utf8');
+    const products = JSON.parse(data);
+    const newProduct = {
+        id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+        ...req.body
+    };
+    products.push(newProduct);
+    fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+    res.json(newProduct);
+});
+
+// Modifier un produit
+app.put('/api/products/:id', (req, res) => {
+    const data = fs.readFileSync(PRODUCTS_FILE, 'utf8');
+    let products = JSON.parse(data);
+    const index = products.findIndex(p => p.id === parseInt(req.params.id));
+    if (index === -1) return res.status(404).json({ error: 'Produit non trouvé' });
+
+    products[index] = { ...products[index], ...req.body };
+    fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+    res.json(products[index]);
+});
+
+// Supprimer un produit
+app.delete('/api/products/:id', (req, res) => {
+    const data = fs.readFileSync(PRODUCTS_FILE, 'utf8');
+    let products = JSON.parse(data);
+    products = products.filter(p => p.id !== parseInt(req.params.id));
+    fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+    res.json({ message: 'Produit supprimé' });
+});
+
 app.listen(PORT, () => {
-    console.log(`✅ Serveur démarré avec SQLite`);
-    console.log(`🚀 Disponible sur http://localhost:${PORT}`);
+    console.log(`🚀 SERVEUR SIMPLE ACTIF sur http://localhost:${PORT}`);
+    console.log(`Lien des produits: http://localhost:${PORT}/api/products`);
 });
