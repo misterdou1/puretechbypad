@@ -42,7 +42,11 @@ db.exec(`
 app.set('db', db);
 
 // --- ROUTES ---
-app.use(express.static(path.join(__dirname, '..')));
+// Servir les fichiers statiques depuis la racine du projet
+const rootDir = path.join(__dirname, '..');
+console.log('Serving static files from:', rootDir);
+app.use(express.static(rootDir));
+
 app.use('/api/admin', adminRoutes);
 app.use('/api/products', productRoutes);
 
