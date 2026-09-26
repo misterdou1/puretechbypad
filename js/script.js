@@ -111,9 +111,8 @@ function sortProducts(sortType) {
 }
 
 async function loadProducts() {
-    console.log("Tentative de chargement depuis le serveur admin...");
+    console.log("Tentative de chargement depuis le serveur cloud...");
     try {
-        // Ajout d'un paramètre aléatoire pour éviter le cache du navigateur
         const response = await fetch(`http://localhost:5000/api/products?t=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Réponse serveur non OK');
 
