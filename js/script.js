@@ -113,7 +113,7 @@ function sortProducts(sortType) {
 async function loadProducts() {
     console.log("Tentative de chargement depuis le serveur cloud...");
     try {
-        const response = await fetch(`http://localhost:5000/api/products?t=${new Date().getTime()}`);
+        const response = await fetch(`https://puretechbypad-yw3z.onrender.com/api/products?t=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Réponse serveur non OK');
 
         const serverProducts = await response.json();
